@@ -10,8 +10,12 @@
         <table class="table" width="100%" border="1" cellspacing="2" cellpadding="2">
             <thead>
                 <tr>
-                    <th>No</th><th>Kode</th><th>Nama</th>
-                    <th>Harga Jual</th><th>Qty</th>
+                    <th>No</th>
+                    <th>Kode</th>
+                    <th>Nama</th>
+                    <th>Stok</th>
+                    <th>Minimum Stok</th>
+                    <th>Jenis Produk</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -26,13 +30,13 @@
                         <td><?=$row['nama']?></td>
                         <td><?=$row['harga_jual']?></td>
                         <td><?=$row['stok']?></td>
+                        <td><?=$row['min_stok']?></td>
                         <td>
-<a class="btn btn-primary" href="view_produk.php?id=<?=$row['id']?>">View</a>
-<a class="btn btn-primary" href="form_produk.php?idedit=<?=$row['id']?>">Edit</a>
-<a class="btn btn-primary" href="delete_produk.php?iddel=<?=$row['id']?>"
-onclick="if(!confirm('Anda Yakin Hapus Data Produk <?=$row['nama']?>?')) {return false}"
->Delete</a>
-</td>
+                            <a class="btn btn-primary" href="view_produk.php?id=<?=$row['id']?>">View</a>
+                            <a class="btn btn-primary" href="form_produk.php?idedit=<?=$row['id']?>">Edit</a>
+                            <a class="btn btn-primary" href="delete_produk.php?iddel=<?=$row['id']?>"
+                            onclick="if(!confirm('Anda Yakin Hapus Data Produk <?=$row['nama']?>?')) {return false}">Delete</a>
+                        </td>
                     </tr>
                 <?php 
                 $nomor++;   
