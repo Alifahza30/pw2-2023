@@ -52,7 +52,7 @@ require_once 'dbkoneksi.php';
     <div class="col-8">
       <div class="input-group">
         <div class="input-group-prepend">
-          <div class="input-group-tetmp_lahir
+          <div class="input-group-tetmp_lahir">
             <i class="fa fa-arrow-circle-up"></i>
           </div>
         </div> 
