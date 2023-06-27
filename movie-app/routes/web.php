@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
@@ -18,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/movies', MovieController::class);
 Route::get('/', [HomeController::class, 'index']);
+
+Route::group(['middlware' => 'auth'], function() {
+    Route::resource('/movies', MovieController::class);
+});
 
 Route::resource('/genres', GenreController::class);
 Route::get('/', [HomeController::class, 'index']);
@@ -27,4 +31,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::resource('/reviews', ReviewController::class);
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/register', [AuthController::class, 'showRegistrationFrom']);
+Route::post('/register', [AuthController::class, 'register']);
 
+Route::get('/login', [AuthController::class, 'showLoginFrom'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);

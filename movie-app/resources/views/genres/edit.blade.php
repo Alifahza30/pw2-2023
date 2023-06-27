@@ -23,7 +23,7 @@
             Edit Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/genres/{{ $genre->id }}">
+            <form  method="POST" action="/genres/{{ $genre->id }}">
                 @csrf
                 @method('PUT')
                 <label for="nama">Nama Genre:</label><br>

@@ -12,7 +12,7 @@
                 <button class="btn btn-success" type="submit">Create Data</button>
             </a>
         </div>
-        @if (session('succsess'))
+        @if (session('success'))
             <div class="alert alert-success">
                 {{session('success')}}
             </div>
